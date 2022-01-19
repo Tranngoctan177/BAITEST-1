@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TÍNH LƯƠNG</title>
+</head>
+<body>
+<input id="Songaycong">
+<select id="Bacluong">
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+    <option>D</option>
+</select>
+<button onclick="Tinhluong()">Tính Lương</button>
+<p id="Ketqua">Kết quả</p>
+<script>
+    function Tinhluong(){
+        let a= Number(document.getElementById("Songaycong").value);
+        let b= document.getElementById("Bacluong").value;
+        if (b=="A"){
+            c= 5000000*a/22;
+        }
+        else if (b== "B"){
+            c= 6000000*a/22;
+        }
+        else if (b=== "C"){
+            c= 8000000*a/22;
+        }
+        else if (b=== "D"){
+            c= 10000000*a/22;
+        }
+        else{
+            alert("Mời bạn nhập lại");
+        }
+        document.getElementById("Ketqua").innerText="Tổng tiền là "+c;
+    }
+</script>
+</body>
+</html>
