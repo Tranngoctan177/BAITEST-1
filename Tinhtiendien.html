@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="soCu" placeholder="Nhập số điện cũ">
+<input type="text" id="soMoi" placeholder="Nhập số điện mới">
+<button id="tinhTien" onclick="tinh_tien()">Tính tiền điện cho anh</button>
+<p id="HieuSo">Hieu so dien</p>
+<p id="Ketqua">So tien phai tra</p>
+
+<script>
+    function tinh_tien(){
+        let soCu= Number(document.getElementById("soCu").value);
+        let soMoi= Number(document.getElementById("soMoi").value);
+        let HieuSo = soMoi-soCu;
+        let tienDien= 0;
+        if (HieuSo>=0 && HieuSo<=50){
+            tienDien=HieuSo*1768;
+        }
+        else if (HieuSo>=51 && HieuSo<=100){
+            tienDien=HieuSo*1734;
+        }
+        else if (HieuSo>=101 && HieuSo<=200){
+            tienDien= HieuSo*2014;
+        }
+        else if (HieuSo>=201 && HieuSo<=300){
+            tienDien=HieuSo*2356;
+        }
+        else if (HieuSo>=301 && HieuSo<=400){
+            tienDien=HieuSo*2834;
+        }
+        else {
+            tienDien=HieuSo*2927;
+        }
+        document.getElementById("HieuSo").innerText="Hieu so dien la: "+ HieuSo;
+        document.getElementById("Ketqua").innerText="So tien dien phai tra la: " + tienDien;
+    }
+</script>
+</body>
+</html>
